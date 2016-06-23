@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>MAP PAGE</title>
+<link rel="stylesheet" href="css/parallax.css"/>
+<link rel="stylesheet" type="text/css" href="css/slide.css">
+<link rel="stylesheet" type="text/css" href="css/redes.css">
+<link rel="stylesheet" href="css/svgxuse.css"/>
+<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+<script type="text/javascript" src="js/maps.js"></script>
+</head>
+<body id="body">
+<div id="header"><img alt="logo" src="img/P04_ParallaxLogoSmall.png" />
+<span class="headerBanner"> Parallax Global</span>
+<a href="http://stevestangl.com/parallax/index.html" class="headerSmallText">Contact </a>
+<a href="html/acerca.html" class="headerSmallText">About us</a>
+</div>
+
+      <div id="left">
+		<p>
+		<a href="index.html"><input class="boton" type="button" value="Home"></a><br/><br/>
+		<a href="html/arana.html" ><input class="boton" type="button" value="Arana"> </a> <br/><br/>		
+		<a href="html/ojeda.html" ><input class="boton" type="button" value="Ojeda"> </a> <br/><br/>		
+		<a href="html/orizaba.html" ><input class="boton" type="button" value="Orizaba"> </a> <br/><br/>		
+		<a href="html/quiroga.html" ><input class="boton" type="button" value="Quiroga"> </a> 
+		</p>
+	  </div>
+	  
+<div id="right">
+<div class="visible-lg">	  
+<div class="social">
+	<ul>
+		<li><a href="http://www.facebook.com" target="_blank" class="icon-facebook2"></a></li>
+		<li><a href=https://twitter.com/?lang=es target="_blank" class="icon-twitter"></a></li>
+		<li><a href="https://www.whatsapp.com/" target="_blank" class="icon-whatsapp"></a></li>
+	</ul>
+</div>
+</div>
+
+<div id="map"></div>
+
+
+</div>
+<div id="right">
+<strong>Start:</strong></br>
+<select id="start" onchange="calcRoute();">
+	<option value="Tampico, Tamaulipas, Mexico">Tampico  </option>
+	<option value="Veracruz, Veracruz-Llave, Mexico">Veracruz</option>
+	<option value="Campeche, Campeche, Mexico">Campeche</option>
+	<option value="Guadalajara, Jalisco, Mexico">Guadalajara</option>
+	<option value="Aguascalientes, Aguascalientes, Mexico">Aguascalientes</option>
+	<option value="Durango, Durango, Mexico">Durango</option>
+	<option value="Mexico City, Distrito Federal, Mexico">Mexico City</option>
+	<option value="Monterrey, Monterrey, Mexico">Monterey</option>
+	<option value="Sonora, Hermosillo, Mexico">Hermosillo</option>
+	<option value="San Luis Potosi, San Luis Potosi, Mexico">San Luis Potosi</option>
+	<option value="Matamoros, Tapms, Mexico">Matamoros</option>
+	<option value="Ciudad Victoria, Tamps, Mexico">Ciudad Victoria</option>
+	<option value="Acapulco, Guerrero, Mexico">Acapulco</option>
+	<option value="Cancún, Quintana Roo, Mexico">Cancún</option>
+	<option value="Arana, Golfo de México">Arana</option>
+	<option value="Quiroga, Golfo de México">Quiroga</option>
+	<option value="Orizba, Golfo de México">Orizba</option>	
+</select>
+
+</br><strong>Half: </strong></br>
+<select id="half" onchange="calcRoute();">
+	<option value="Tampico, Tamaulipas, Mexico">Tampico  </option>
+	<option value="Veracruz, Veracruz-Llave, Mexico">Veracruz</option>
+	<option value="Campeche, Campeche, Mexico">Campeche</option>
+	<option value="Guadalajara, Jalisco, Mexico">Guadalajara</option>
+	<option value="Aguascalientes, Aguascalientes, Mexico">Aguascalientes</option>
+	<option value="Durango, Durango, Mexico">Durango</option>
+	<option value="Mexico City, Distrito Federal, Mexico">Mexico City</option>
+	<option value="Monterrey, Monterrey, Mexico">Monterey</option>
+	<option value="Sonora, Hermosillo, Mexico">Hermosillo</option>
+	<option value="San Luis Potosi, San Luis Potosi, Mexico">San Luis Potosi</option>
+	<option value="Matamoros, Tapms, Mexico">Matamoros</option>
+	<option value="Ciudad Victoria, Tamps, Mexico">Ciudad Victoria</option>
+	<option value="Acapulco, Guerrero, Mexico">Acapulco</option>
+	<option value="Cancún, Quintana Roo, Mexico">Cancún</option>
+	<option value="Arana, Golfo de México">Arana</option>
+	<option value="Quiroga, Golfo de México">Quiroga</option>
+	<option value="Orizba, Golfo de México">Orizba</option>
+
+</select>
+
+</br><strong> End: </strong></br>
+<select id="end" onchange="calcRoutee();">
+	<option value="Tampico, Tamaulipas, Mexico">Tampico  </option>
+	<option value="Veracruz, Veracruz-Llave, Mexico">Veracruz</option>
+	<option value="Campeche, Campeche, Mexico">Campeche</option>
+	<option value="Guadalajara, Jalisco, Mexico">Guadalajara</option>
+	<option value="Aguascalientes, Aguascalientes, Mexico">Aguascalientes</option>
+	<option value="Durango, Durango, Mexico">Durango</option>
+	<option value="Mexico City, Distrito Federal, Mexico">Mexico City</option>
+	<option value="Monterrey, Monterrey, Mexico">Monterey</option>
+	<option value="Sonora, Hermosillo, Mexico">Hermosillo</option>
+	<option value="San Luis Potosi, San Luis Potosi, Mexico">San Luis Potosi</option>
+	<option value="Matamoros, Tapms, Mexico">Matamoros</option>
+	<option value="Ciudad Victoria, Tamps, Mexico">Ciudad Victoria</option>
+	<option value="Acapulco, Guerrero, Mexico">Acapulco</option>
+	<option value="Cancún, Quintana Roo, Mexico">Cancún</option>
+	<option value="Arana, Golfo de México">Arana</option>
+	<option value="Quiroga, Golfo de México">Quiroga</option>
+	<option value="Orizba, Golfo de México">Orizba</option>
+</select>
+</div>
+<h3>First Distance: <strong id="distance">0</strong> km.</h3>
+<h3>Month: <strong id="meses"> </strong> </h3>
+<h3>Robots: <strong id="robot">0 </strong> </h3>
+<p>------------------------------------</p>
+<h3>Second Distance: <strong id="distancee">0</strong> km. </h3>
+<h3>Month: <strong id="meses1"> </strong> </h3>
+<h3>Robots: <strong id="robot2">0 </strong> </h3>
+<h3>Distance: <strong id="distancee">0</strong> km. </h3>
+
+<div id="div_map" style="width: 900px; height: 500px"></div>
+<div id="footer">
+<hr/>
+		<p> Parallax Global </p>
+
+</div>
+
+</body>
+</html>
